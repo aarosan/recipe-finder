@@ -1,3 +1,4 @@
+
 #intro-box, #intro {
     display: flex;
     flex-direction: column;
@@ -5,10 +6,15 @@
     align-items: center;
 }
 
+#intro-box {
+    background-color: gainsboro;
+}
+
 #welcome-text {
    font-weight: bold;
    margin: 15px;
    font-size: 30px;
+   background-color: gainsboro;
 }
 
 #instructions-text {
@@ -18,8 +24,24 @@
 
 #selection-box {
     display: flex;
+    justify-content: space-around;
+    background-color: gainsboro;
+}
+
+#selection-box h2 {
+    display: flex;
+    justify-content: center;
+    color: white;
+    border: black;
+    font-size: 20px;
+}
+
+#tv-generator-box h2 {
+    display: flex;
     justify-content: center;
 }
 
-#generate-button-box {
-    
+#recipe-generator-box {
+    color: white;
+    justify-content: center;
+}
