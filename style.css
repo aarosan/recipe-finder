@@ -1,0 +1,25 @@
+#intro-box, #intro {
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    align-items: center;
+}
+
+#welcome-text {
+   font-weight: bold;
+   margin: 15px;
+   font-size: 30px;
+}
+
+#instructions-text {
+    margin: 10px 75px 10px 75px;
+    display: block;
+}
+
+#selection-box {
+    display: flex;
+    justify-content: center;
+}
+
+#generate-button-box {
+    
