@@ -4,6 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
   <script src="https://cdn.tailwindcss.com"></script>
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 <link rel="stylesheet" href="./style.css">
 <title>Dinner & Show</title>
 </head>
@@ -28,13 +29,13 @@
 </header>
 <div id="intro">
   <div id="intro-box" style="border: 2px solid black; width: 1000px; margin: 30px; padding: 30px;">
-    <h1 id="welcome-text">Welcome to Recipe & TV Show Generator!</h1>
-    <p id="instructions-text">Our mission is to provide you suggestions for a perfect evening. First, choose your dinner preferences under the 'Recipe Generator' section. You can include as many specifications as you'd like, but need one specification at a minimum. Next, choose a tv show genre that you'd like to watch alongside your meal. Hit the generate button and we'll provide you with suggestions below! You can click into the recipe thumbnails for more details including the ingredients list and cooking instructions. Similarly, you can click on the TV Show suggestion for more information.
+    <h1 id="welcome-text">Welcome to Dinner & a Movie!</h1>
+    <p id="instructions-text">Our mission is to provide you suggestions for a perfect evening. First, choose your dinner preferences under the 'Recipe Generator' section. You can include as many specifications as you'd like, but need one specification at a minimum. Next, choose a movie genre that you'd like to watch alongside your meal. Hit the generate button and we'll provide you with a suggestion below! You can click into the recipe thumbnails for more details including the ingredients list and cooking instructions. Similarly, you can click on the TV Show suggestion for more information.
     </p>
   </div>
 </div>
 <div id="selection-box" style="border: 2px solid black; width: 90%; margin: 30px; padding: 30px;">
-  <div id="recipe-generator-box" class="bg-gray-800" style="border: 2px solid black; height: 1200px; width: 50%;  padding: 30px;">
+  <div id="recipe-generator-box" class="bg-gray-800" style="border: 2px solid black; height: 1200px; width: 40%;  padding: 30px;">
     <h2>Recipe Preference</h2><br>
     <div class="preference-select">
     <h3>Diet Type</h3>
@@ -157,8 +158,67 @@
     </div>
   </div>
   
-  <div id="tv-generator-box" class="bg-gray-800" style="border: 2px solid black; height: 450px; width: 40%; padding: 30px;"> 
-    <h2>TV Show Preference</h2>
+  <div id="tv-generator-box" class="bg-gray-800" style="border: 2px solid black; height: 500px; width: 40%; padding: 30px;"> 
+    <h2>Movie Preference</h2><br>
+      <input type="checkbox" id="action">
+      <label for="action">Action</label><br>
+
+      <input type="checkbox" id="adventure">
+      <label for="adventure">Adventure</label><br>
+
+      <input type="checkbox" id="animation">
+      <label for="animation">Animation</label><br>
+
+      <input type="checkbox" id="comedy">
+      <label for="comedy">Comedy</label><br>
+
+      <input type="checkbox" id="crime">
+      <label for="crime">Crime</label><br>
+
+      <input type="checkbox" id="documentary">
+      <label for="documentary">Documentary</label><br>
+
+      <input type="checkbox" id="drama">
+      <label for="drama">Drama</label><br>
+
+      <input type="checkbox" id="fantasy">
+      <label for="fantasy">Fantasy</label><br>
+
+      <input type="checkbox" id="horror">
+      <label for="horror">Horror</label><br>
+
+      <input type="checkbox" id="mystery">
+      <label for="mystery">Mystery</label><br>
+
+      <input type="checkbox" id="romance">
+      <label for="romance">Romance</label><br>
+
+      <input type="checkbox" id="science-fiction">
+      <label for="science-fiction">Science Fiction</label><br>
+
+      <input type="checkbox" id="thriller">
+      <label for="thriller">Thriller</label><br><br>
+
+      <button id="search-button" class="relative inline-flex items-center justify-center p-0.5 mb-2 me-2 overflow-hidden text-sm font-medium text-gray-900 rounded-lg group bg-gradient-to-br from-cyan-500 to-blue-500 group-hover:from-cyan-500 group-hover:to-blue-500 hover:text-white dark:text-white focus:ring-4 focus:outline-none focus:ring-cyan-200 dark:focus:ring-cyan-800">
+        <span class="relative px-5 py-2.5 transition-all ease-in duration-75 bg-white dark:bg-gray-900 rounded-md group-hover:bg-opacity-0">
+          Search
+        </span>
+      </button>
+   
   </div>
+  
+  </div>
+  <div id="movie-render" style="border: 2px solid black; height: 350px; width: 90%; margin: 30px; padding: 30px;">
+    <div style="width: 40%; justify-content: center;"><img id="movie-poster-render"></div>
+    <div style="width: 40%;" id="movie-detail">
+      <h2 id="movie-render-title"></h2><br>
+      <p id="movie-render-description"><i></i></p><br>
+      <h4 id="movie-render-rating"><b></b></h4>
+    </div>
+    
+  </div>
+
+  <script src="TMDB API/TMDBscript.js"></script>
+
 </body>
 </html>
