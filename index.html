@@ -34,8 +34,9 @@
   </div>
 </div>
 <div id="selection-box" style="border: 2px solid black; width: 90%; margin: 30px; padding: 30px;">
-  <div id="recipe-generator-box" class="bg-gray-800" style="border: 2px solid black; height: 1200px; width: 30%;  padding: 30px;">
+  <div id="recipe-generator-box" class="bg-gray-800" style="border: 2px solid black; height: 1200px; width: 50%;  padding: 30px;">
     <h2>Recipe Preference</h2><br>
+    <div class="preference-select">
     <h3>Diet Type</h3>
       <input type="checkbox" id="high-fiber">
       <label for="high-fiber">High Fiber</label><br>
@@ -51,6 +52,8 @@
 
       <input type="checkbox" id="low-sodium">
       <label for="low-sodium">Low Sodium</label><br><br>
+    </div>
+    <div class="preference-select">
     <h3>Cuisine Type</h3>
       <input type="radio" id="american" name="cuisine-type" value="American">
       <label for="american">American</label><br>
@@ -102,6 +105,8 @@
 
       <input type="radio" id="south-east-asian" name="cuisine-type" value="South East Asian">
       <label for="South East Asian">South East Asian</label><br><br>
+    </div>
+    <div class="preference-select">
     <h3>Meal Type</h3>
       <input type="radio" id="breakfast" name="meal-type" value="Breakfast">
       <label for="Breakfast">Breakfast</label><br>
@@ -114,6 +119,8 @@
 
       <input type="radio" id="dinner" name="meal-type" value="Dinner">
       <label for="Dinner">Dinner</label><br><br>
+    </div>
+    <div class="preference-select">
     <h3>Dish Type</h3>
       <input type="checkbox" id="desserts">
       <label for="desserts">Desserts</label><br>
@@ -143,10 +150,14 @@
       <label for="soup">Soup</label><br>
 
       <input type="checkbox" id="starter">
-      <label for="starter">Starter</label><br><br>
+      <label for="starter">Starter</label><br>
+
+      <input type="checkbox" id="no-preference">
+      <label for="no-preference">No Preference</label><br><br>
+    </div>
   </div>
   
-  <div id="tv-generator-box" class="bg-gray-800" style="border: 2px solid black; height: 450px; width: 30%; padding: 30px;"> 
+  <div id="tv-generator-box" class="bg-gray-800" style="border: 2px solid black; height: 450px; width: 40%; padding: 30px;"> 
     <h2>TV Show Preference</h2>
   </div>
 

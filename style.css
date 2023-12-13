@@ -43,5 +43,12 @@
 
 #recipe-generator-box {
     color: white;
-    justify-content: center;
+    justify-content: start;
+    margin: 0;
+}
+
+#preference-select {
+   display: flex;
+   flex-direction: column;
+   width: 150px;
 }
