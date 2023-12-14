@@ -1,6 +1,8 @@
 apiId = '5ab8e6ed';
 apiKey = '09a80b5e169f716caebf46aba639a975';
 
+//Diet
+//high-fiber, high-protein, low-carb, low-fat, low-sodium
 
 const highFiberInput = $('#high-fiber');
 const highProteinInput = $('#high-protein');
@@ -11,19 +13,34 @@ const lowSodiumInput = $('#low-sodium');
 diet = '';
 
 
-highFiberInput.on('click', function(e) {
-    console.log(e);
+function getDiet() {
+    var dietArray = [
+        highFiberInput,
+        highProteinInput,
+        lowCarbInput,
+        lowFatInput,
+        lowSodiumInput
+    ];
 
-    if (highProteinInput.is(":checked")) {
-        console.log('clicked');
+    for (var i = 0; i < dietArray.length; i++) {
+        if (dietArray[i].prop('checked')) {
+            diet = dietArray[i].attr('id');
+            console.log("Selected Diet:", diet);
+            break;
+        }
     }
-    
-})
+}
 
+// highFiberInput.on('click', function(e) {
+//     console.log(e);
+//     if (highFiberInput.is(":checked")) {
+//         console.log('clicked');
+//     }
+// })
 
-//high-fiber, high-protein, low-carb, low-fat, low-sodium
-
-cuisineType = '';
+//Cuisine Type
+//American, Asian, British, Caribbean, Central Europe, Chinese, Eastern Europe, French, 
+//Indian, Italian, Japanese, Kosher, Mediterranean, Mexican, Middle Eastern, Nordic, South American, South East Asian
 
 const americanInput = $('#american');
 const asianInput = $('#asian');
@@ -42,39 +59,120 @@ const nordicInput = $('#middle-eastern');
 const southAmericanInput = $('#nordic');
 const southEastAsianInput = $('#south-american');
 
-//American, Asian, British, Caribbean, Central Europe, Chinese, Eastern Europe, French, 
-//Indian, Italian, Japanese, Kosher, Mediterranean, Mexican, Middle Eastern, Nordic, South American, South East Asian
+cuisineType = '';
 
-mealType = '';
+
+function getCuisineType() {
+    var cuisineArray = [
+        americanInput,
+        asianInput,
+        britishInput,
+        caribbeanInput,
+        centralEuropeInput,
+        chineseInput,
+        easternEuropeInput,
+        frenchInput,
+        indianInput,
+        italianInput,
+        japaneseInput,
+        kosherInput,
+        mediterraneanInput,
+        nordicInput,
+        southAmericanInput,
+        southEastAsianInput
+    ];
+
+    for (var i = 0; i < cuisineArray.length; i++) {
+        if (cuisineArray[i].prop('checked')) {
+            cuisineType = cuisineArray[i].attr('id');
+            console.log("Selected Cuisine Type:", cuisineType);
+            break;
+        }
+    }
+}
+
+
+//Meal Type
+//Breakfast, Brunch, Dinner, Lunch
 
 const breakfastInput = $('#breakfast');
 const brunchInput = $('#brunch');
 const lunchInput = $('#lunch');
 const dinnerInput = $('#dinner');
 
-//Breakfast, Brunch, Dinner, Lunch
+mealType = '';
 
+function getMealType() {
+    var mealArray = [
+        breakfastInput,
+        brunchInput,
+        lunchInput,
+        dinnerInput, 
+    ];
 
-dishType = '';
+    for (var i = 0; i < mealArray.length; i++) {
+        if (mealArray[i].prop('checked')) {
+            mealType = mealArray[i].attr('id');
+            console.log("Selected Cuisine Type:", mealType);
+            break;
+        }
+    }
+}
+
+//Dish Type
+//Desserts, Drinks, Main Course, Pasta, Pizza, Salad, Sandwiches, Side-Dish, Soup, Starter
 
 const dessertsInput = $('#desserts');
 const drinksInput = $('#drinks');
 const mainCourseInput = $('#main-course');
-const pastaInput = $('#pasta');
-const pizzaInput = $('#pizza');
 const saladInput = $('#salad');
 const sandwichesInput = $('#sandwiches');
-const sideDishInput = $('#side-dish');
 const soupInput = $('#soup');
 const starterInput = $('#starter');
+const noPreference = $('#no-preference');
 
-//Desserts, Drinks, Main Course, Pasta, Pizza, Salad, Sandwiches, Side-Dish, Soup, Starter
+dishType = '';
 
-function recipePreference() {
-    //if the diet type is true
-    //then replace the value of diet
-    //with the option selected
+
+function getDishType() {
+    var dishArray = [
+        dessertsInput,
+        drinksInput,
+        mainCourseInput,
+        saladInput,
+        sandwichesInput,
+        soupInput,
+        starterInput,
+        noPreference
+    ];
+
+    for (var i = 0; i < dishArray.length; i++) {
+        if (dishArray[i].prop('checked')) {
+            if (dishArray[i] === noPreference) {
+                console.log('No Preference');
+                dishType = 'main-course';
+                break;
+            }
+            dishType = dishArray[i].attr('id');
+            console.log("Selected Dish Type:", dishType);
+            break;
+        }
+    }
 }
+
+const generateRecipeBtn = $('#generate-recipe');
+
+generateRecipeBtn.on('click', function() {
+    console.log('Generate Recipe');
+    getDiet();
+    getCuisineType();
+    getMealType();
+    getDishType();
+    getRecipe();
+    displayRecipe();
+})
+
+
 
 
 
@@ -104,7 +202,7 @@ function getRecipe() {
         })
         .then(data => {
             // uncomment below to test
-            // console.log(data);
+            console.log(data);
             return data;
         })
         .catch(error => {
@@ -113,15 +211,15 @@ function getRecipe() {
         })
 }
 
-// const recipeName = $('#recipeName');
-// const recipeUrl = $('#recipeUrl');
-// const recipeIngredients = $('#recipeIngredients');
-// const recipeInstruction = $('#recipeInstruction');
-// const recipeCalories = $('#recipeCalories');
-// const recipeCuisineType = $('#recipeCuisineType');
-// const recipeDietLabels = $('#recipeDietLabels');
-// const recipeDishType = $('#recipeDishType');
-// const recipeMealType = $('#recipeMealType');
+const recipeName = $('#recipeName');
+const recipeUrl = $('#recipeUrl');
+const recipeIngredients = $('#recipeIngredients');
+const recipeInstruction = $('#recipeInstruction');
+const recipeCalories = $('#recipeCalories');
+const recipeCuisineType = $('#recipeCuisineType');
+const recipeDietLabels = $('#recipeDietLabels');
+const recipeDishType = $('#recipeDishType');
+const recipeMealType = $('#recipeMealType');
 
 async function displayRecipe() {
     const recipeData = await getRecipe();
@@ -132,12 +230,12 @@ async function displayRecipe() {
     if (recipeData) {
         const { hits } = recipeData;
         // const imageUrl = hits[0].recipe.images.REGULAR.url;
-        // console.log("Entire API information of the First Object from the Array", hits[0])
-        // console.log("Specific Recipe Info", hits[0].recipe)
-        // console.log("Specific Recipe URL", hits[0].recipe.url)
-        // console.log("Specific Recipe Name", hits[0].recipe.label)
-        // console.log("Specific Recipe Ingredients", hits[0].recipe.ingredientLines)
-        // console.log("Specific Recipe Instructions", hits[0].recipe.instructionLines)
+        console.log("Entire API information of the First Object from the Array", hits[0])
+        console.log("Specific Recipe Info", hits[0].recipe)
+        console.log("Specific Recipe URL", hits[0].recipe.url)
+        console.log("Specific Recipe Name", hits[0].recipe.label)
+        console.log("Specific Recipe Ingredients", hits[0].recipe.ingredientLines)
+        console.log("Specific Recipe Instructions", hits[0].recipe.instructionLines)
         //Different things to call and test
         //Calories: hits[0].recipe.calories
         //Cuisine Type: hits[0].recipe.cuisineType
@@ -146,20 +244,20 @@ async function displayRecipe() {
         //Image: hits[0].recipe.image
         //Different Size Images: hits[0].recipe.images.LARGE|REGULAR|SMALL|THUMBNAIL
         //Meal Type: hits[0].recipe.mealType
-        // recipeName.text(hits[0].recipe.label);
-        // recipeUrl.text(hits[0].recipe.url);
-        // recipeIngredients.text(hits[0].recipe.ingredientLines);
-        // recipeInstruction.text(hits[0].recipe.instructionLines);
-        // recipeCalories.text(hits[0].recipe.calories);
-        // recipeCuisineType.text(hits[0].recipe.cuisineType);
-        // recipeDietLabels.text(hits[0].recipe.dietLabels);
-        // recipeDishType.text(hits[0].recipe.dishType);
-        // recipeMealType.text(hits[0].recipe.mealType);
+        recipeName.text(hits[0].recipe.label);
+        recipeUrl.text(hits[0].recipe.url);
+        recipeIngredients.text(hits[0].recipe.ingredientLines);
+        recipeInstruction.text(hits[0].recipe.instructionLines);
+        recipeCalories.text(hits[0].recipe.calories);
+        recipeCuisineType.text(hits[0].recipe.cuisineType);
+        recipeDietLabels.text(hits[0].recipe.dietLabels);
+        recipeDishType.text(hits[0].recipe.dishType);
+        recipeMealType.text(hits[0].recipe.mealType);
 
     } 
 }
 
-getRecipe();
+// getRecipe();
 
-displayRecipe();
+// displayRecipe();
 
