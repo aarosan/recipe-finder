@@ -10,6 +10,7 @@ const lowSodiumInput = $('#low-sodium');
 
 diet = '';
 
+
 highFiberInput.on('click', function(e) {
     console.log(e);
 
