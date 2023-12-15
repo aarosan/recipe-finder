@@ -108,6 +108,14 @@
     font-weight: bold;
 }
 
+.recipeUrlTitle {
+    font-weight: bold;
+}
+
+.recipeCaloriesTitle {
+    font-weight: bold;
+}
+
 .recipeCalories {
     /* border: 2px dashed green; */
     margin: 5px 5px 20px 5px;
