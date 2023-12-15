@@ -42,8 +42,8 @@ Pablo Anchondo
 https://github.com/pabgit
 
 # Links
-GitHub hosted here:
+Repository hosted here:
 https://github.com/aaron-ross-sanchez/recipe-finder
 
-Repository found here:
+Github found here:
 https://aaron-ross-sanchez.github.io/recipe-finder/
