@@ -15,8 +15,11 @@ For Movie Preference, check the type of movie you're in the mood for and select 
 
 # Technology
 CSS
+
 HTML
+
 Javascript
+
 JQuery
 
 # Framework
@@ -24,6 +27,7 @@ Tailwinds
 
 # API's
 Edamam
+
 The Movie Database (TMDB)
 
 # Authors
