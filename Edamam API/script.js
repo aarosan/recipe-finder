@@ -172,6 +172,24 @@ generateRecipeBtn.on('click', function() {
     displayRecipe();
 })
 
+const clearOptionsBtn = $('#clear-options');
+
+clearOptionsBtn.on('click', function() {
+    console.log("clear options");
+
+    const dietTypeCheckbox = $('[name="diet-type"]');
+    dietTypeCheckbox.prop('checked', false);
+
+    const cuisineTypeRadio = $('[name="cuisine-type"]');
+    cuisineTypeRadio.prop('checked', false);
+    
+    const mealTypeRadio = $('[name="meal-type"]');
+    mealTypeRadio.prop('checked', false);
+
+    const dishTypeCheckbox = $('[name="dish-type"]');
+    dishTypeCheckbox.prop('checked', false);
+})
+
 
 
 
@@ -221,21 +239,31 @@ const recipeDietLabels = $('#recipeDietLabels');
 const recipeDishType = $('#recipeDishType');
 const recipeMealType = $('#recipeMealType');
 
+
+
 async function displayRecipe() {
     const recipeData = await getRecipe();
     // below should pull the same data that is returned in the getRecipe function
     // uncomment below to test
     // console.log("displayRecipe Data: ", recipeData);
 
+
     if (recipeData) {
         const { hits } = recipeData;
+        const randomIndex = Math.floor(Math.random() * hits.length);
+        console.log(randomIndex);
+        const randomRecipe = hits[randomIndex].recipe;
+        console.log(randomRecipe);
+        console.log(randomRecipe.label);
+        recipeName.text(randomRecipe.label);
+
         // const imageUrl = hits[0].recipe.images.REGULAR.url;
-        console.log("Entire API information of the First Object from the Array", hits[0])
-        console.log("Specific Recipe Info", hits[0].recipe)
-        console.log("Specific Recipe URL", hits[0].recipe.url)
-        console.log("Specific Recipe Name", hits[0].recipe.label)
-        console.log("Specific Recipe Ingredients", hits[0].recipe.ingredientLines)
-        console.log("Specific Recipe Instructions", hits[0].recipe.instructionLines)
+        // console.log("Entire API information of the First Object from the Array", hits[0])
+        // console.log("Specific Recipe Info", hits[0].recipe)
+        // console.log("Specific Recipe URL", hits[0].recipe.url)
+        // console.log("Specific Recipe Name", hits[0].recipe.label)
+        // console.log("Specific Recipe Ingredients", hits[0].recipe.ingredientLines)
+        // console.log("Specific Recipe Instructions", hits[0].recipe.instructionLines)
         //Different things to call and test
         //Calories: hits[0].recipe.calories
         //Cuisine Type: hits[0].recipe.cuisineType
@@ -244,20 +272,18 @@ async function displayRecipe() {
         //Image: hits[0].recipe.image
         //Different Size Images: hits[0].recipe.images.LARGE|REGULAR|SMALL|THUMBNAIL
         //Meal Type: hits[0].recipe.mealType
-        recipeName.text(hits[0].recipe.label);
-        recipeUrl.text(hits[0].recipe.url);
+        const apiUrl = hits[0].recipe.url;
+        $('#recipeUrl').attr('href', apiUrl).text(apiUrl);
+        // recipeUrl.text(hits[0].recipe.url);
+        $('#hide').children().css('visibility', 'visible');
         recipeIngredients.text(hits[0].recipe.ingredientLines);
         recipeInstruction.text(hits[0].recipe.instructionLines);
-        recipeCalories.text(hits[0].recipe.calories);
-        recipeCuisineType.text(hits[0].recipe.cuisineType);
-        recipeDietLabels.text(hits[0].recipe.dietLabels);
-        recipeDishType.text(hits[0].recipe.dishType);
-        recipeMealType.text(hits[0].recipe.mealType);
-
+        const calories = hits[0].recipe.calories;
+        const formattedCalories = calories.toFixed(0);
+        recipeCalories.text(formattedCalories);
     } 
 }
 
 // getRecipe();
 
 // displayRecipe();
-
