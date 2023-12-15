@@ -34,128 +34,134 @@
     </p>
   </div>
 </div>
+
 <div id="selection-box" style="border: 2px solid black; width: 90%; margin: 30px; padding: 30px;">
-  <div id="recipe-generator-box" class="bg-gray-800" style="border: 2px solid black; height: 1200px; width: 40%;  padding: 30px;">
+  <div id="recipe-generator-box" class="bg-gray-800" style="border: 2px solid black;  width: 40%;  padding: 30px;">
     <h2>Recipe Preference</h2><br>
-    <div class="preference-select">
-    <h3>Diet Type</h3>
-      <input type="checkbox" id="high-fiber">
-      <label for="high-fiber">High Fiber</label><br>
+    
+      <div class="recipe-selection-options"> 
+        <div class="preference-select recipe-options">
+          <h3>Diet Type</h3>
+            <input type="checkbox" id="high-fiber">
+            <label for="high-fiber">High Fiber</label><br>
 
-      <input type="checkbox" id="high-protein">
-      <label for="high-protein">High Protein</label><br>
+            <input type="checkbox" id="high-protein">
+            <label for="high-protein">High Protein</label><br>
 
-      <input type="checkbox" id="low-carb">
-      <label for="low-carb">Low Carb</label><br>
+            <input type="checkbox" id="low-carb">
+            <label for="low-carb">Low Carb</label><br>
 
-      <input type="checkbox" id="low-fat">
-      <label for="low-fat">Low Fat</label><br>
+            <input type="checkbox" id="low-fat">
+            <label for="low-fat">Low Fat</label><br>
 
-      <input type="checkbox" id="low-sodium">
-      <label for="low-sodium">Low Sodium</label><br><br>
-    </div>
-    <div class="preference-select">
-    <h3>Cuisine Type</h3>
-      <input type="radio" id="american" name="cuisine-type" value="American">
-      <label for="american">American</label><br>
+            <input type="checkbox" id="low-sodium">
+            <label for="low-sodium">Low Sodium</label><br><br>
+        </div>
 
-      <input type="radio" id="asian" name="cuisine-type" value="Asian">
-      <label for="Asian">Asian</label><br>
+        <div class="preference-select recipe-options">
+          <h3>Cuisine Type</h3>
+            <input type="radio" id="american" name="cuisine-type" value="American">
+            <label for="american">American</label><br>
 
-      <input type="radio" id="british" name="cuisine-type" value="British">
-      <label for="British">British</label><br>
+            <input type="radio" id="asian" name="cuisine-type" value="Asian">
+            <label for="Asian">Asian</label><br>
 
-      <input type="radio" id="caribbean" name="cuisine-type" value="Caribbean">
-      <label for="Caribbean">Caribbean</label><br>
-
-      <input type="radio" id="central-europe" name="cuisine-type" value="Central Europe">
-      <label for="Central Europe">Central Europe</label><br>
-
-      <input type="radio" id="Chinese" name="cuisine-type" value="Chinese">
-      <label for="Chinese">Chinese</label><br>
-
-      <input type="radio" id="eastern-europe" name="cuisine-type" value="Eastern Europe">
-      <label for="Eastern Europe">Eastern Europe</label><br>
-
-      <input type="radio" id="french" name="cuisine-type" value="French">
-      <label for="French">French</label><br>
-
-      <input type="radio" id="indian" name="cuisine-type" value="Indian">
-      <label for="Indian">Indian</label><br>
-
-      <input type="radio" id="italian" name="cuisine-type" value="Italian">
-      <label for="Italian">Italian</label><br>
-
-      <input type="radio" id="japanese" name="cuisine-type" value="Japanese">
-      <label for="Japanese">Japanese</label><br>
-
-      <input type="radio" id="kosher" name="cuisine-type" value="Kosher">
-      <label for="Kosher">Kosher</label><br>
-
-      <input type="radio" id="mediterranean" name="cuisine-type" value="Mediterranean">
-      <label for="Mediterranean">Mediterranean</label><br>
-
-      <input type="radio" id="middle-eastern" name="cuisine-type" value="Middle Eastern">
-      <label for="Middle Eastern">Middle Eastern</label><br>
-
-      <input type="radio" id="nordic" name="cuisine-type" value="Nordic">
-      <label for="Nordic">Nordic</label><br>
-
-      <input type="radio" id="south-american" name="cuisine-type" value="South American">
-      <label for="South American">South American</label><br>
-
-      <input type="radio" id="south-east-asian" name="cuisine-type" value="South East Asian">
-      <label for="South East Asian">South East Asian</label><br><br>
-    </div>
-    <div class="preference-select">
-    <h3>Meal Type</h3>
-      <input type="radio" id="breakfast" name="meal-type" value="Breakfast">
-      <label for="Breakfast">Breakfast</label><br>
-
-      <input type="radio" id="brunch" name="meal-type" value="Brunch">
-      <label for="Brunch">Brunch</label><br>
-
-      <input type="radio" id="lunch" name="meal-type" value="Lunch">
-      <label for="Lunch">Lunch</label><br>
-
-      <input type="radio" id="dinner" name="meal-type" value="Dinner">
-      <label for="Dinner">Dinner</label><br><br>
-    </div>
-    <div class="preference-select">
-    <h3>Dish Type</h3>
-      <input type="checkbox" id="desserts">
-      <label for="desserts">Desserts</label><br>
+            <input type="radio" id="british" name="cuisine-type" value="British">
+            <label for="British">British</label><br>
       
-      <input type="checkbox" id="drinks">
-      <label for="drinks">Drinks</label><br>
+            <input type="radio" id="caribbean" name="cuisine-type" value="Caribbean">
+            <label for="Caribbean">Caribbean</label><br>
 
-      <input type="checkbox" id="main-course">
-      <label for="main-course">Main Course</label><br>
+            <input type="radio" id="central-europe" name="cuisine-type" value="Central Europe">
+            <label for="Central Europe">Central Europe</label><br>
 
-      <input type="checkbox" id="pasta">
-      <label for="pasta">Pasta</label><br>
+            <input type="radio" id="Chinese" name="cuisine-type" value="Chinese">
+            <label for="Chinese">Chinese</label><br>
 
-      <input type="checkbox" id="pizza">
-      <label for="pizza">Pizza</label><br>
+            <input type="radio" id="eastern-europe" name="cuisine-type" value="Eastern Europe">
+            <label for="Eastern Europe">Eastern Europe</label><br>
 
-      <input type="checkbox" id="salad">
-      <label for="salad">Salad</label><br>
+            <input type="radio" id="french" name="cuisine-type" value="French">
+            <label for="French">French</label><br>
 
-      <input type="checkbox" id="sandwiches">
-      <label for="sandwiches">Sandwiches</label><br>
+            <input type="radio" id="indian" name="cuisine-type" value="Indian">
+            <label for="Indian">Indian</label><br>
 
-      <input type="checkbox" id="side-dish">
-      <label for="side-dish">Side Dish</label><br>
+            <input type="radio" id="italian" name="cuisine-type" value="Italian">
+            <label for="Italian">Italian</label><br>
 
-      <input type="checkbox" id="soup">
-      <label for="soup">Soup</label><br>
+            <input type="radio" id="japanese" name="cuisine-type" value="Japanese">
+            <label for="Japanese">Japanese</label><br>
 
-      <input type="checkbox" id="starter">
-      <label for="starter">Starter</label><br>
+            <input type="radio" id="kosher" name="cuisine-type" value="Kosher">
+            <label for="Kosher">Kosher</label><br>
 
-      <input type="checkbox" id="no-preference">
-      <label for="no-preference">No Preference</label><br><br>
-    </div>
+            <input type="radio" id="mediterranean" name="cuisine-type" value="Mediterranean">
+            <label for="Mediterranean">Mediterranean</label><br>
+
+            <input type="radio" id="middle-eastern" name="cuisine-type" value="Middle Eastern">
+            <label for="Middle Eastern">Middle Eastern</label><br>
+
+            <input type="radio" id="nordic" name="cuisine-type" value="Nordic">
+            <label for="Nordic">Nordic</label><br>
+
+            <input type="radio" id="south-american" name="cuisine-type" value="South American">
+            <label for="South American">South American</label><br>
+
+            <input type="radio" id="south-east-asian" name="cuisine-type" value="South East Asian">
+            <label for="South East Asian">South East Asian</label><br><br>      
+         </div>
+
+        <div class="preference-select recipe-options">
+          <h3>Meal Type</h3>
+            <input type="radio" id="breakfast" name="meal-type" value="Breakfast">
+            <label for="Breakfast">Breakfast</label><br>
+
+            <input type="radio" id="brunch" name="meal-type" value="Brunch">
+            <label for="Brunch">Brunch</label><br>
+
+            <input type="radio" id="lunch" name="meal-type" value="Lunch">
+            <label for="Lunch">Lunch</label><br>
+
+            <input type="radio" id="dinner" name="meal-type" value="Dinner">
+            <label for="Dinner">Dinner</label><br><br>
+         </div>
+
+
+        <div class="preference-select recipe-options">
+          <h3>Dish Type</h3>
+            <input type="checkbox" id="desserts">
+            <label for="desserts">Desserts</label><br>
+      
+            <input type="checkbox" id="drinks">
+            <label for="drinks">Drinks</label><br>
+
+            <input type="checkbox" id="main-course">
+            <label for="main-course">Main Course</label><br>
+
+            <input type="checkbox" id="salad">
+            <label for="salad">Salad</label><br>
+
+            <input type="checkbox" id="sandwiches">
+            <label for="sandwiches">Sandwiches</label><br>
+
+            <input type="checkbox" id="soup">
+            <label for="soup">Soup</label><br>
+
+            <input type="checkbox" id="starter">
+            <label for="starter">Starter</label><br>
+
+            <input type="checkbox" id="no-preference">
+            <label for="no-preference">No Preference</label><br><br>      
+        </div>
+      </div>
+
+
+       <button id="generate-recipe" class="relative inline-flex items-center justify-center p-0.5 mb-2 me-2 overflow-hidden text-sm font-medium text-gray-900 rounded-lg group bg-gradient-to-br from-cyan-500 to-blue-500 group-hover:from-cyan-500 group-hover:to-blue-500 hover:text-white dark:text-white focus:ring-4 focus:outline-none focus:ring-cyan-200 dark:focus:ring-cyan-800">
+         <span class="relative px-5 py-2.5 transition-all ease-in duration-75 bg-white dark:bg-gray-900 rounded-md group-hover:bg-opacity-0">
+            Generate
+        </span>
+       </button>
   </div>
   
   <div id="tv-generator-box" class="bg-gray-800" style="border: 2px solid black; height: 500px; width: 40%; padding: 30px;"> 
@@ -219,9 +225,21 @@
     
   </div>
 
+
+
+<div class="recipe" id="recipe" style="border: 2px solid black; width: 90%; margin: 30px; padding: 30px;">
+  <p class="recipeName">Recipe Name: <span id="recipeName"></span></p>
+  <p class="recipeUrl">Recipe URL: <span id="recipeUrl"></span></p>
+  <p class="recipeIngredients">Recipe Ingredients: <span id="recipeIngredients"></span></p>
+  <p class="recipeInstruction">Recipe Instructions: <span id="recipeInstruction"></span></p>
+  <p class="recipeCalories">Recipe Calories: <span id="recipeCalories"></span></p>
+  <p class="recipeCuisineType">Recipe Cuisine Type: <span id="recipeCuisineType"></span></p>
+  <p class="recipeDietLabels">Recipe Diet Labels: <span id="recipeDietLabels"></span></p>
+  <p class="recipeDishType">Recipe Dish Type: <span id="recipeDishType"></span></p>
+  <p class="recipeMealType">Recipe Meal Type: <span id="recipeMealType"></span></p>
+</div>
+
   <script src="TMDB API/TMDBscript.js"></script>
-
-
   <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
   <script src="/Edamam API/script.js"></script>
 
