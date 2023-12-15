@@ -1,4 +1,4 @@
-
+/* Making an intro box with centered text */
 #intro-box, #intro {
     display: flex;
     flex-direction: column;
@@ -6,6 +6,7 @@
     align-items: center;
 }
 
+/* Making an intro box with a gray background */
 #intro-box {
     background-color: gainsboro;
 }
@@ -28,6 +29,7 @@
     background-color: gainsboro;
 }
 
+/* Setting middle section boxes' widths */
 #recipe-generator-box, #tv-generator-box {
     width: 45%; 
     padding: 30px;
@@ -60,6 +62,7 @@
     background-color: gainsboro;
 }
 
+/* Setting the recipe areas' background as gray */
 #recipe {
     background-color: gainsboro;
     font-size: 18px;
@@ -160,6 +163,7 @@
     /* margin: 0 40% 5% 40% */
 }
 
+/* Setting the responsive design specifications - reducing margins, fonts, and changing the display from flex to block in several areas */
 @media screen and (max-width: 768px) {
     #instructions-text {
         width: 450px;
@@ -194,5 +198,8 @@
         font-size: 12px;
     }
 
-   
+   #recipe {
+    display: flex;
+    font-size: 12px;
+   }
 }
