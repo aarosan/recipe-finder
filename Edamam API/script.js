@@ -1,19 +1,22 @@
+//access for Edamam API
 apiId = '5ab8e6ed';
 apiKey = '09a80b5e169f716caebf46aba639a975';
 
 //Diet
 //high-fiber, high-protein, low-carb, low-fat, low-sodium
-
+//variables for the diet-type checkboxes
 const highFiberInput = $('#high-fiber');
 const highProteinInput = $('#high-protein');
 const lowCarbInput = $('#low-carb');
 const lowFatInput = $('#low-fat');
 const lowSodiumInput = $('#low-sodium');
 
+//variable that will be part of the API query
 diet = '';
 
-
+//function that will check to see what the user inputed for diet type
 function getDiet() {
+    //the array the for loop will run through
     var dietArray = [
         highFiberInput,
         highProteinInput,
@@ -21,11 +24,14 @@ function getDiet() {
         lowFatInput,
         lowSodiumInput
     ];
-
+    //for loop that will go through and check all of the input options from dietArray
     for (var i = 0; i < dietArray.length; i++) {
+        //if it is checked, the value of diet will change to the checked index's html id
         if (dietArray[i].prop('checked')) {
             diet = dietArray[i].attr('id');
+            //test
             console.log("Selected Diet:", diet);
+            //ends the for loop
             break;
         }
     }
@@ -41,7 +47,7 @@ function getDiet() {
 //Cuisine Type
 //American, Asian, British, Caribbean, Central Europe, Chinese, Eastern Europe, French, 
 //Indian, Italian, Japanese, Kosher, Mediterranean, Mexican, Middle Eastern, Nordic, South American, South East Asian
-
+//variables for the cuisine-type radio
 const americanInput = $('#american');
 const asianInput = $('#asian');
 const britishInput = $('#british');
@@ -59,9 +65,11 @@ const nordicInput = $('#middle-eastern');
 const southAmericanInput = $('#nordic');
 const southEastAsianInput = $('#south-american');
 
+//variable that will be part of the API query
 cuisineType = '';
 
-
+//function that will check to see what the user inputed for cuisine type
+//similar to getDiet()
 function getCuisineType() {
     var cuisineArray = [
         americanInput,
@@ -94,14 +102,17 @@ function getCuisineType() {
 
 //Meal Type
 //Breakfast, Brunch, Dinner, Lunch
-
+//variables for the meal-type radio
 const breakfastInput = $('#breakfast');
 const brunchInput = $('#brunch');
 const lunchInput = $('#lunch');
 const dinnerInput = $('#dinner');
 
+//variable that will be part of the API query
 mealType = '';
 
+//function that will check to see what the user inputed for meal type
+//similar to getDiet()
 function getMealType() {
     var mealArray = [
         breakfastInput,
@@ -121,7 +132,7 @@ function getMealType() {
 
 //Dish Type
 //Desserts, Drinks, Main Course, Pasta, Pizza, Salad, Sandwiches, Side-Dish, Soup, Starter
-
+//variables for the dish-type checkboxes
 const dessertsInput = $('#desserts');
 const drinksInput = $('#drinks');
 const mainCourseInput = $('#main-course');
@@ -131,9 +142,11 @@ const soupInput = $('#soup');
 const starterInput = $('#starter');
 const noPreference = $('#no-preference');
 
+//variable that will be part of the API query
 dishType = '';
 
-
+//function that will check to see what the user inputed for dish type
+//similar to getDiet()
 function getDishType() {
     var dishArray = [
         dessertsInput,
