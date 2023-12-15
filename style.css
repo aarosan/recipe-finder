@@ -28,6 +28,11 @@
     background-color: gainsboro;
 }
 
+#recipe-generator-box, #tv-generator-box {
+    width: 45%; 
+    padding: 30px;
+}
+
 .recipe-selection-options {
     display: flex;
     justify-content: space-between;
@@ -41,6 +46,7 @@
 
 .recipe-options {
     width: 25%;
+    margin: 2px;
 }
 
 #movie-render {
@@ -134,4 +140,41 @@
 
 #generate-recipe {
     margin: 0 40% 5% 40%
+}
+
+@media screen and (max-width: 768px) {
+    #instructions-text {
+        width: 450px;
+    }
+
+    #selection-box {
+        display: block;
+    }
+
+    #recipe-generator-box {
+        width: 100%;
+        margin-bottom: 30px;
+    }
+
+    #tv-generator-box {
+        width: 100%;
+        margin-bottom: 30px;
+        padding-left: 100px;
+        padding-right: 100px;
+    }
+
+    #movie-render {
+        margin: 10px;
+        justify-content: space-between;
+    }
+
+    #movie-poster-render {
+        margin-right: 10px;
+    }
+
+    #movie-detail {
+        font-size: 12px;
+    }
+
+   
 }

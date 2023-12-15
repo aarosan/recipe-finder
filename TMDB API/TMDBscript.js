@@ -43,10 +43,7 @@ function getAPI() {
             genresString += ("%2C" + genres[i]);
         }
     }
-
-    console.log(genresString);   
-
-
+    
     var tvQuery = "https://api.themoviedb.org/3/discover/movie?include_adult=false&include_video=false&language=en-US&with_original_language=en&page=1&sort_by=popularity.desc&with_genres=" + genresString + "&api_key=" + APIKey;
     fetch(tvQuery)
         .then(function (response) {
