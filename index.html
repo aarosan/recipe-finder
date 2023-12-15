@@ -5,11 +5,11 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
   <script src="https://cdn.tailwindcss.com"></script>
   <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-<link rel="stylesheet" href="./style.css">
+<link rel="stylesheet" href="assets/css/style.css">
 <title>Dinner & Movie</title>
 </head>
 <body>
-  <!-- Creating a dark, simple header -->
+  <!-- Creating a dark, simple header with website info at top -->
 <header>
  <nav class="bg-gray-800">
   <div class="max-w-7xl px-2 sm:px-6 lg:px-8">
@@ -29,17 +29,21 @@
 </header>
 <div id="intro">
   <div id="intro-box" style="border: 2px solid black; width: 1000px; margin: 30px; padding: 30px;">
+     <!-- Creating a description at the start of the site to inform users of the application's purpose and use -->
     <h1 id="welcome-text">Welcome to Dinner and a Movie!</h1>
     <p id="instructions-text">Our mission is to provide you suggestions for a perfect evening. First, choose your dinner preferences under the 'Recipe Generator' section. You can include as many specifications as you'd like, but need at least one specification. Next, choose a movie genre that you'd like to watch alongside your meal. Hit the generate button and we'll provide you with your dinner and movie recommendation below! Each movie recommendation will come with a description and TMDB (The Movie Database) user rating. Each recipe recommendation will include ingredients, instructions and URL link with more information. Cheers!
     </p>
   </div>
 </div>
 
+ <!-- Creating the middle section which contains two subsections: the recipe preference selections and the movie genre selections -->
 <div id="selection-box" style="border: 2px solid black; width: 90%; margin: 30px; padding: 30px;">
   <div id="recipe-generator-box" class="bg-gray-800" style="border: 2px solid black;">
     <h2>Recipe Preference</h2><br>
     
+     <!-- Recipe selection div -->
       <div class="recipe-selection-options"> 
+         <!-- Diet type specifications -->
         <div class="preference-select recipe-options">
           <h3>Diet Type</h3>
             <input type="checkbox" id="high-fiber" name="diet-type">
@@ -59,6 +63,7 @@
         </div>
 
         <div class="preference-select recipe-options">
+          <!-- Cuisine type specifications -->
           <h3>Cuisine Type</h3>
             <input type="radio" id="american" name="cuisine-type" value="American">
             <label for="american">American</label><br>
@@ -113,6 +118,7 @@
          </div>
 
         <div class="preference-select recipe-options">
+          <!-- Cuisine type specifications -->
           <h3>Meal Type</h3>
             <input type="radio" id="breakfast" name="meal-type" value="Breakfast">
             <label for="Breakfast">Breakfast</label><br>
@@ -129,6 +135,7 @@
 
 
         <div class="preference-select recipe-options">
+          <!-- Dish type specifications -->
           <h3>Dish Type</h3>
             <input type="checkbox" id="desserts" name="dish-type">
             <label for="desserts">Desserts</label><br>
@@ -156,13 +163,14 @@
         </div>
       </div>
 
+      <!-- Generate button for recipe -->
       <div class="buttonFlex">
        <button id="generate-recipe" class="relative inline-flex items-center justify-center p-0.5 mb-2 me-2 overflow-hidden text-sm font-medium text-gray-900 rounded-lg group bg-gradient-to-br from-cyan-500 to-blue-500 group-hover:from-cyan-500 group-hover:to-blue-500 hover:text-white dark:text-white focus:ring-4 focus:outline-none focus:ring-cyan-200 dark:focus:ring-cyan-800">
          <span class="relative px-5 py-2.5 transition-all ease-in duration-75 bg-white dark:bg-gray-900 rounded-md group-hover:bg-opacity-0">
             Generate
         </span>
        </button>
-
+      <!-- Reset criteria button for recipe -->
        <button id="clear-options" class="relative inline-flex items-center justify-center p-0.5 mb-2 me-2 overflow-hidden text-sm font-medium text-gray-900 rounded-lg group bg-gradient-to-br from-cyan-500 to-blue-500 group-hover:from-cyan-500 group-hover:to-blue-500 hover:text-white dark:text-white focus:ring-4 focus:outline-none focus:ring-cyan-200 dark:focus:ring-cyan-800">
         <span class="relative px-5 py-2.5 transition-all ease-in duration-75 bg-white dark:bg-gray-900 rounded-md group-hover:bg-opacity-0">
            Clear Options
@@ -172,6 +180,7 @@
 
   </div>
   
+  <!-- Movie genre selection div -->
   <div id="tv-generator-box" class="bg-gray-800" style="border: 2px solid black; height: 500px;"> 
     <h2>Movie Preference</h2><br>
       <input type="checkbox" id="action">
@@ -213,6 +222,7 @@
       <input type="checkbox" id="thriller">
       <label for="thriller">Thriller</label><br><br>
     
+      <!-- Generate button for movie recommendation -->
       <button id="search-button" class="relative inline-flex items-center justify-center p-0.5 mb-2 me-2 overflow-hidden text-sm font-medium text-gray-900 rounded-lg group bg-gradient-to-br from-cyan-500 to-blue-500 group-hover:from-cyan-500 group-hover:to-blue-500 hover:text-white dark:text-white focus:ring-4 focus:outline-none focus:ring-cyan-200 dark:focus:ring-cyan-800">
         <span class="relative px-5 py-2.5 transition-all ease-in duration-75 bg-white dark:bg-gray-900 rounded-md group-hover:bg-opacity-0">
           Generate
@@ -222,6 +232,7 @@
   </div>
   </div>
 
+  <!-- Recipe display section -->
 <div class="recipe" id="recipe" style="border: 2px solid black; width: 90%; margin: 30px; padding: 30px;">
   <div id="hide">
   <p class="recipeName"><span id="recipeName"></span></p>
@@ -236,6 +247,7 @@
   </div>
 </div>
 
+<!-- Movie display section -->
 <div id="movie-render" style="border: 2px solid black; height: 350px; width: 90%; margin: 30px; padding: 30px;">
   <div style="width: 40%; justify-content: center;"><img id="movie-poster-render"></div>
   <div style="width: 40%;" id="movie-detail">
@@ -245,9 +257,10 @@
   </div>
 </div>
 
-  <script src="TMDB API/TMDBscript.js"></script>
+<!-- Linking the TMDB API, Jquery framework, and the Edamam API -->
+  <script src="assets/js/TMDB API/TMDBscript.js"></script>
   <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-  <script src="Edamam API/script.js"></script>
+  <script src="assets/js/Edamam API/script.js"></script>
 
 </body>
 </html>
