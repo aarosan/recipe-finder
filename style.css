@@ -43,6 +43,11 @@
     width: 25%;
 }
 
+.buttonFlex {
+    display: flex;
+    justify-content: space-around;
+}
+
 #movie-render {
     display: flex;
     justify-content: center;
@@ -54,50 +59,55 @@
     font-size: 18px;
 }
 
+#hide {
+    visibility: hidden;
+}
+
 .recipeName {
-    border: 2px dashed red;
-    margin: 5px;
+    /* border: 2px dashed red; */
+    margin: 5px 5px 20px 5px;
+    font-weight: bold;
+    display: flex;
+    justify-content: center;
+}
+
+.rowTwo {
+    display: flex;
+    justify-content: space-between;
 }
 
 .recipeUrl {
-    border: 2px dashed green;
-    margin: 5px;
+    /* border: 2px dashed green; */
+    margin: 5px 5px 20px 5px;
+    display: flex;
 }
 
 .recipeIngredients {
-    border: 2px dashed blue;
+    /* border: 2px dashed blue; */
     margin: 5px;
+    margin: 5px 5px 20px 5px;
+}
+
+.recipeIngredientsTitle {
+    font-weight: bold;
 }
 
 .recipeInstruction {
-    border: 2px dashed purple;
+    /* border: 2px dashed purple; */
     margin: 5px;
+    margin: 5px 5px 20px 5px;
+}
+
+.recipeInstructionTitle {
+    font-weight: bold;
 }
 
 .recipeCalories {
-    border: 2px dashed red;
-    margin: 5px;
+    /* border: 2px dashed green; */
+    margin: 5px 5px 20px 5px;
+    display: flex;
 }
 
-.recipeCuisineType {
-    border: 2px dashed green;
-    margin: 5px;
-}
-
-.recipeDietLabels {
-    border: 2px dashed blue;
-    margin: 5px;
-}
-
-.recipeDishType {
-    border: 2px dashed purple;
-    margin: 5px;
-}
-
-.recipeMealType {
-    border: 2px dashed red;
-    margin: 5px;
-}
 
 #selection-box h2 {
     display: flex;
@@ -133,5 +143,5 @@
 }
 
 #generate-recipe {
-    margin: 0 40% 5% 40%
+    /* margin: 0 40% 5% 40% */
 }

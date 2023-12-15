@@ -42,19 +42,19 @@
       <div class="recipe-selection-options"> 
         <div class="preference-select recipe-options">
           <h3>Diet Type</h3>
-            <input type="checkbox" id="high-fiber">
+            <input type="checkbox" id="high-fiber" name="diet-type">
             <label for="high-fiber">High Fiber</label><br>
 
-            <input type="checkbox" id="high-protein">
+            <input type="checkbox" id="high-protein" name="diet-type">
             <label for="high-protein">High Protein</label><br>
 
-            <input type="checkbox" id="low-carb">
+            <input type="checkbox" id="low-carb" name="diet-type">
             <label for="low-carb">Low Carb</label><br>
 
-            <input type="checkbox" id="low-fat">
+            <input type="checkbox" id="low-fat" name="diet-type">
             <label for="low-fat">Low Fat</label><br>
 
-            <input type="checkbox" id="low-sodium">
+            <input type="checkbox" id="low-sodium" name="diet-type">
             <label for="low-sodium">Low Sodium</label><br><br>
         </div>
 
@@ -130,38 +130,46 @@
 
         <div class="preference-select recipe-options">
           <h3>Dish Type</h3>
-            <input type="checkbox" id="desserts">
+            <input type="checkbox" id="desserts" name="dish-type">
             <label for="desserts">Desserts</label><br>
       
-            <input type="checkbox" id="drinks">
+            <input type="checkbox" id="drinks" name="dish-type">
             <label for="drinks">Drinks</label><br>
 
-            <input type="checkbox" id="main-course">
+            <input type="checkbox" id="main-course" name="dish-type">
             <label for="main-course">Main Course</label><br>
 
-            <input type="checkbox" id="salad">
+            <input type="checkbox" id="salad" name="dish-type">
             <label for="salad">Salad</label><br>
 
-            <input type="checkbox" id="sandwiches">
+            <input type="checkbox" id="sandwiches" name="dish-type">
             <label for="sandwiches">Sandwiches</label><br>
 
-            <input type="checkbox" id="soup">
+            <input type="checkbox" id="soup" name="dish-type">
             <label for="soup">Soup</label><br>
 
-            <input type="checkbox" id="starter">
+            <input type="checkbox" id="starter" name="dish-type">
             <label for="starter">Starter</label><br>
 
-            <input type="checkbox" id="no-preference">
+            <input type="checkbox" id="no-preference" name="dish-type">
             <label for="no-preference">No Preference</label><br><br>      
         </div>
       </div>
 
-
+      <div class="buttonFlex">
        <button id="generate-recipe" class="relative inline-flex items-center justify-center p-0.5 mb-2 me-2 overflow-hidden text-sm font-medium text-gray-900 rounded-lg group bg-gradient-to-br from-cyan-500 to-blue-500 group-hover:from-cyan-500 group-hover:to-blue-500 hover:text-white dark:text-white focus:ring-4 focus:outline-none focus:ring-cyan-200 dark:focus:ring-cyan-800">
          <span class="relative px-5 py-2.5 transition-all ease-in duration-75 bg-white dark:bg-gray-900 rounded-md group-hover:bg-opacity-0">
-            Generate
+            Generate Recipe
         </span>
        </button>
+
+       <button id="clear-options" class="relative inline-flex items-center justify-center p-0.5 mb-2 me-2 overflow-hidden text-sm font-medium text-gray-900 rounded-lg group bg-gradient-to-br from-cyan-500 to-blue-500 group-hover:from-cyan-500 group-hover:to-blue-500 hover:text-white dark:text-white focus:ring-4 focus:outline-none focus:ring-cyan-200 dark:focus:ring-cyan-800">
+        <span class="relative px-5 py-2.5 transition-all ease-in duration-75 bg-white dark:bg-gray-900 rounded-md group-hover:bg-opacity-0">
+           Clear Options
+       </span>
+      </button>
+     </div>
+
   </div>
   
   <div id="tv-generator-box" class="bg-gray-800" style="border: 2px solid black; height: 500px; width: 40%; padding: 30px;"> 
@@ -228,15 +236,17 @@
 
 
 <div class="recipe" id="recipe" style="border: 2px solid black; width: 90%; margin: 30px; padding: 30px;">
-  <p class="recipeName">Recipe Name: <span id="recipeName"></span></p>
-  <p class="recipeUrl">Recipe URL: <span id="recipeUrl"></span></p>
-  <p class="recipeIngredients">Recipe Ingredients: <span id="recipeIngredients"></span></p>
-  <p class="recipeInstruction">Recipe Instructions: <span id="recipeInstruction"></span></p>
-  <p class="recipeCalories">Recipe Calories: <span id="recipeCalories"></span></p>
-  <p class="recipeCuisineType">Recipe Cuisine Type: <span id="recipeCuisineType"></span></p>
-  <p class="recipeDietLabels">Recipe Diet Labels: <span id="recipeDietLabels"></span></p>
-  <p class="recipeDishType">Recipe Dish Type: <span id="recipeDishType"></span></p>
-  <p class="recipeMealType">Recipe Meal Type: <span id="recipeMealType"></span></p>
+  <div id="hide">
+  <p class="recipeName"><span id="recipeName"></span></p>
+  <div class="rowTwo">
+    <p class="recipeUrl">
+      <a href="#" id="recipeUrl"><span id="recipeUrl"></span></a>
+    </p>
+    <p class="recipeCalories">Calories: <span id="recipeCalories"> </span></p>
+  </div>
+  <p class="recipeIngredients"><span class="recipeIngredientsTitle">Ingredients: </span><span id="recipeIngredients"></span></p>
+  <p class="recipeInstruction"><span class="recipeInstructionTitle">Instructions: </span><span id="recipeInstruction"></span></p>
+  </div>
 </div>
 
   <script src="TMDB API/TMDBscript.js"></script>
