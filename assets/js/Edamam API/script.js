@@ -285,13 +285,13 @@ async function displayRecipe() {
         //Image: hits[0].recipe.image
         //Different Size Images: hits[0].recipe.images.LARGE|REGULAR|SMALL|THUMBNAIL
         //Meal Type: hits[0].recipe.mealType
-        const apiUrl = hits[0].recipe.url;
+        const apiUrl = randomRecipe.url;
         $('#recipeUrl').attr('href', apiUrl).text(apiUrl);
         // recipeUrl.text(hits[0].recipe.url);
         $('#hide').children().css('visibility', 'visible');
-        recipeIngredients.text(hits[0].recipe.ingredientLines);
-        recipeInstruction.text(hits[0].recipe.instructionLines);
-        const calories = hits[0].recipe.calories;
+        recipeIngredients.text(randomRecipe.ingredientLines);
+        recipeInstruction.text(randomRecipe.instructionLines);
+        const calories = randomRecipe.calories;
         const formattedCalories = calories.toFixed(0);
         recipeCalories.text(formattedCalories);
     } 
