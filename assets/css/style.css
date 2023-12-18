@@ -159,9 +159,11 @@
     font-weight: bold;
 }
 
-#generate-recipe {
-    /* margin: 0 40% 5% 40% */
+#buttons {
+    display: flex;
+    justify-content: space-around;
 }
+
 
 /* Setting the responsive design specifications - reducing margins, fonts, and changing the display from flex to block in several areas */
 @media screen and (max-width: 768px) {

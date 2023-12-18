@@ -1,6 +1,7 @@
 // Initializing the API key that will get referenced throughout (Eric Peterson's API key established on 12/12/23)
 var APIKey = 'b308edb38dbc4c10566851b90f4974bb';
 var genres = 53;
+var movieHistory = [];
 
 // When 'Generate' button is selected in the film section, start the entire getAPI function
 function getAPI() {
@@ -66,8 +67,33 @@ function getAPI() {
             $('#movie-render-title').text(movieTitle);
             $('#movie-render-rating').text("User Rating: " + movieRating);
             $('#movie-render-description').text(movieDescription);
+
+            // Save last search query to local storage    
+            movieHistory.push([movieTitle, movieRating, moviePoster, movieDescription]);
+            localStorage.setItem("movieHistory", JSON.stringify(movieHistory));
         });
 };
+    
+
+// Render last searched movie to movie history section
+function movieHistoryRender() {
+    
+    var oldMovie = JSON.parse(localStorage.getItem("movieHistory"))||[];
+  
+        
+    if (oldMovie.length>1) {
+        var oldMovieLength = oldMovie.length-2;
+        $('#movie-poster-render').attr('src',"https://image.tmdb.org/t/p/w185"+oldMovie[oldMovieLength][2]);
+        $('#movie-render-title').text(oldMovie[oldMovieLength][0]);
+        $('#movie-render-rating').text("User Rating: " + oldMovie[oldMovieLength][1]);
+        $('#movie-render-description').text(oldMovie[oldMovieLength][3]);
+    };
+};
+    
+
 
 // Add event listener to 'generate button
 $('#search-button').on('click', getAPI);
+
+// Add event listener for 'load last film recommendation' button
+$('#movie-history-button').on('click', movieHistoryRender);
