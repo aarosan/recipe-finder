@@ -1,4 +1,4 @@
-# Diner and a Movie
+# Dinner and a Movie
 A front-end application to find a recipe and movie recommendation.
 
 # User Story
