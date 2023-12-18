@@ -19,9 +19,9 @@ Next, in the "Movie Preference" section, choose the movie genre(s) you'd like to
 
 Cheers!
 
-<img width="887" alt="User selects dish preference and movie genre preference" src="https://github.com/aaron-ross-sanchez/recipe-finder/assets/29375681/bd8efaa2-636d-4595-8f4f-fbbd04a7a161">
+<img width="887" alt="User selects dish preference and movie genre preference" src="https://github.com/aaron-ross-sanchez/recipe-finder/assets/29375681/bd8efaa2-636d-4595-8f4f-fbbd04a7a161" style="border: black;">
 
-<img width="866" alt="Recipe and movie recs are generated at the bottom of the page" src="https://github.com/aaron-ross-sanchez/recipe-finder/assets/29375681/5ec6a865-6bde-4113-8e1e-41628b707476">
+<img width="866" alt="Recipe and movie recs are generated at the bottom of the page" src="https://github.com/aaron-ross-sanchez/recipe-finder/assets/29375681/5ec6a865-6bde-4113-8e1e-41628b707476"  style="border: black;">
 
 
 # Technologies/Frameworks Used
