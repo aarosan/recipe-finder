@@ -44,7 +44,7 @@ https://github.com/pabgit
 
 # Links
 Repository hosted here:
-https://github.com/aaron-ross-sanchez/recipe-finder
+https://github.com/aarosan/recipe-finder
 
-Github found here:
-https://aaron-ross-sanchez.github.io/recipe-finder/
+Deployed Application found here:
+https://aarosan.github.io/recipe-finder/
